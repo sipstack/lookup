@@ -58,10 +58,10 @@ Internal Call Lookup / Locales
 
 ## **exchange** (rate_centre) (Canada/US Only)
 
-| id  | code   | city_id | lata | lir    | ocn_id |
-| --- | ------ | ------- | ---- | ------ | ------ |
-| 1   | 158340 | 1       | 888  | 805106 |        |
-| 2   | 158270 | 1       | 222  |        |        |
+| id  | code   | city_id | lata | lir    | ocn_id | local_to             |
+| --- | ------ | ------- | ---- | ------ | ------ | -------------------- |
+| 1   | 158340 | 1       | 888  | 805106 |        | [<exchange_id>],...] |
+| 2   | 158270 | 1       | 222  |        |        | [<exchange_id>],...] |
 
 ...
 
