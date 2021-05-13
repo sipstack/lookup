@@ -1,0 +1,22 @@
+{
+  "name": "lookup",
+  "version": "1.0.0",
+  "description": "Supplementary project for API / SBC / UCS\r Internal Call Lookup / Locales",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.sipstack.com/hub/lookup.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
+    "node-fetch": "^2.6.1",
+    "p-limit": "^3.1.0",
+    "xml2json": "^0.12.0"
+  }
+}
