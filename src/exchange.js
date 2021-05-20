@@ -49,8 +49,8 @@ const getData = async (npa, nxx) => {
 }
 
 // Populate array with pending promises
-for (let i = 201; i < 202; i++) {
-    for (let j = 200; j < 202; j++) {
+for (let i = 201; i < 999; i++) {
+    for (let j = 200; j < 999; j++) {
         xmlPromises.push(limit(() => getData(i, j)));
     }
 }
