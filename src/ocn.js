@@ -6,7 +6,6 @@ const pLimit = require('p-limit');
 // Limit number of concurrent calls
 const limit = pLimit(100);
 
-const cities = require('./json/cities.json');
 const xmlPromises = [];
 
 const records = []
@@ -16,8 +15,7 @@ const csvWriter = createCsvWriter({
     path: "./out/ocn.csv",
     header: [
         { id: "code", title: "code" },
-        { id: "name", title: "name" },
-        { id: "cityId", title: "city_id" }
+        { id: "name", title: "name" }
     ]
 });
 
@@ -68,15 +66,13 @@ Promise.all(xmlPromises).then((data) => {
                 data[i] = [data[i]];
             
             for (let j = 0; j < data[i].length; j++) {
-                let cityId = cities[data[i][j].rc] ? cities[data[i][j].rc] : -1;
     
-                if (!tracker[`${data[i][j].ocn}${data[i][j]['company-name']}${cityId}`]) {
+                if (!tracker[`${data[i][j].ocn}${data[i][j]['company-name']}`]) {
                     records.push({
                         code: data[i][j].ocn,
-                        name: data[i][j]['company-name'],
-                        cityId
+                        name: data[i][j]['company-name']
                     });
-                    tracker[`${data[i][j].ocn}${data[i][j]['company-name']}${cityId}`] = 1;
+                    tracker[`${data[i][j].ocn}${data[i][j]['company-name']}`] = 1;
                 }
             }
         }
