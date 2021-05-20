@@ -41,7 +41,7 @@ const getData = async (exch) => {
 }
 
 // Populate array with pending promises
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 99999; i++) {
     let spl = i.toString().split('');
     let diff = 5 - spl.length;
     if (diff) {
