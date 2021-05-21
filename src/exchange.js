@@ -44,13 +44,14 @@ const getData = async (npa, nxx) => {
                     promise = resolve({});
                 }
                 return promise;
-            });
+            })
+            .catch(() => console.log(`No data at npa/nxx: ${npa}/${nxx}`));
     });
 }
 
 // Populate array with pending promises
-for (let i = 201; i < 999; i++) {
-    for (let j = 200; j < 999; j++) {
+for (let i = 201; i < 1000; i++) {
+    for (let j = 200; j < 1000; j++) {
         xmlPromises.push(limit(() => getData(i, j)));
     }
 }

@@ -28,18 +28,19 @@ const getData = async (exch) => {
                 
                 // Catch faulty XML
                 try {
-                    promise = resolve(JSON.parse(parser.toJson(data)).root);
+                    promise = resolve(JSON.parse(parser.toJson(data)).root || {});
                 } catch (e) {
                     console.log(`No data at exch: ${exch}`);
                     promise = resolve({});
                 }
                 return promise;
-            });
+            })
+            .catch(() => console.log(`No data at exch: ${exch}`));
     });
 }
 
 // Populate array with pending promises
-for (let i = 0; i < 99999; i++) {
+for (let i = 0; i < 100000; i++) {
     let spl = i.toString().split('');
     let diff = 5 - spl.length;
     if (diff) {
