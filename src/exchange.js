@@ -45,7 +45,10 @@ const getData = async (npa, nxx) => {
                 }
                 return promise;
             })
-            .catch(() => console.log(`No data at npa/nxx: ${npa}/${nxx}`));
+            .catch(() => {
+                console.log(`No data at npa/nxx: ${npa}/${nxx}`)
+                return resolve({});
+            });
     });
 }
 

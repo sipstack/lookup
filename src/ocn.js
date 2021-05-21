@@ -35,7 +35,10 @@ const getData = async (exch) => {
                 }
                 return promise;
             })
-            .catch(() => console.log(`No data at exch: ${exch}`));
+            .catch(() => {
+                console.log(`No data at exch: ${exch}`);
+                return resolve({});
+            });
     });
 }
 
