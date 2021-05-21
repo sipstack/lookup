@@ -4,7 +4,7 @@ const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 const pLimit = require('p-limit');
 
 // Limit number of concurrent calls
-const limit = pLimit(100);
+const limit = pLimit(80);
 
 const xmlPromises = [];
 
