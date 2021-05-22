@@ -66,7 +66,7 @@ const validate = (input) => {
 
 Promise.all(xmlPromises).then((data) => {
     for (let i = 0; i < data.length; i++) {
-        if (data[i].prefixdata) {
+        if (data[i] && data[i].prefixdata) {
             data[i] = data[i].prefixdata;
             if (!Array.isArray(data[i])) 
                 data[i] = [data[i]];
